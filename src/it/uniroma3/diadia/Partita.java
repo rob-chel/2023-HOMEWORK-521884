@@ -16,9 +16,11 @@ import it.uniroma3.diadia.giocatore.Giocatore;
 public class Partita {
 
 	//static final private int CFU_INIZIALI = 20;
+	
+	static final private String[] elencoComandi = {"vai", "aiuto", "fine", "posa", "prendi" , "guarda"};
 
-	//private Stanza stanzaCorrente;
-	//private Stanza stanzaVincente;
+	private Stanza stanzaCorrente;
+	private Stanza stanzaVincente;
 	private boolean finita;
 	//private int cfu;
 	private Labirinto labirinto;
@@ -29,6 +31,8 @@ public class Partita {
 		this.labirinto = new Labirinto();
 		this.giocatore = new Giocatore();
 		this.finita = false;
+		this.stanzaCorrente= this.labirinto.getStanzaIniziale();
+		this.stanzaVincente= this.labirinto.getStanzaFinale();
 		//this.cfu = CFU_INIZIALI;
 	}
 
@@ -80,7 +84,7 @@ public class Partita {
 	 * @return vero se partita vinta
 	 */
 	public boolean vinta() {
-		return this.labirinto.getStanzaCorrente() == this.labirinto.getStanzaVincente();
+		return this.stanzaCorrente == this.stanzaVincente;
 	}
 
 	/**
@@ -121,6 +125,41 @@ public class Partita {
 	public void setGiocatore(Giocatore giocatore) {
 		this.giocatore = giocatore;
 	}
+
+	public Stanza getStanzaCorrente() {
+		return stanzaCorrente;
+	}
+
+	public void setStanzaCorrente(Stanza stanzaCorrente) {
+		this.stanzaCorrente = stanzaCorrente;
+	}
+
+	public Stanza getStanzaVincente() {
+		return stanzaVincente;
+	}
+
+	public void setStanzaVincente(Stanza stanzaVincente) {
+		this.stanzaVincente = stanzaVincente;
+	}
+
+	public boolean giocatoreIsVivo() {//metodo aggiunto
+		return this.getGiocatore().getCfu()>0;
+		
+	}
+
+	public static String[] getElencocomandi() {
+		return elencoComandi;
+	}
+	
+	
+	@Override
+	public String toString() {
+		StringBuilder sb=new StringBuilder();
+		sb.append("CFU giocatore:"+this.giocatore.getCfu());
+		return sb.toString();
+	}
+	
+	
 	
 	
 	

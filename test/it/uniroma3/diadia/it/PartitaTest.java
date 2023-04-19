@@ -14,13 +14,13 @@ public class PartitaTest {
 
 	@Test
 	public void testGetStanzaVincente() {
-		assertEquals("Biblioteca", p.getLabirinto().getStanzaVincente().getNome());
+		assertEquals("Biblioteca", p.getStanzaVincente().getNome());
 	}
 
 	@Test
 	public void testSetStanzaCorrente() {
-		p.getLabirinto().setStanzaCorrente(s);
-		assertEquals(s, p.getLabirinto().getStanzaCorrente());
+		p.setStanzaCorrente(s);
+		assertEquals(s, p.getStanzaCorrente());
 	}
 
 	@Test

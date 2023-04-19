@@ -1,11 +1,12 @@
 package it.uniroma3.diadia.ambienti;
 
+import it.uniroma3.diadia.Partita;
 import it.uniroma3.diadia.attrezzi.Attrezzo;
 
 public class Labirinto {
-	private Stanza stanzaCorrente;
-	private Stanza stanzaVincente;
-	
+	private Stanza stanzaIniziale;//si puo sostituire con stanzaIniziale
+	private Stanza stanzaFinale;//si puo sostituire con stanzaFinale, perche appartengono a partita concettualmente
+	private Partita partita; 
 	public Labirinto() {
 		creaStanze();
 	}
@@ -43,21 +44,31 @@ public class Labirinto {
 		atrio.addAttrezzo(osso);
 
 		// il gioco comincia nell'atrio
-        stanzaCorrente = atrio;  
-		stanzaVincente = biblioteca;
+        stanzaIniziale = atrio;  
+		stanzaFinale = biblioteca;
     }
+
+
+	public Stanza getStanzaIniziale() {
+		return stanzaIniziale;
+	}
+
+
+	public void setStanzaIniziale(Stanza stanzaIniziale) {
+		this.stanzaIniziale = stanzaIniziale;
+	}
+
+
+	public Stanza getStanzaFinale() {
+		return stanzaFinale;
+	}
+
+
+	public void setStanzaFinale(Stanza stanzaFinale) {
+		this.stanzaFinale = stanzaFinale;
+	}
 	
-	public Stanza getStanzaVincente() {
-		return stanzaVincente;
-	}
-
-	public void setStanzaCorrente(Stanza stanzaCorrente) {
-		this.stanzaCorrente = stanzaCorrente;
-	}
-
-	public Stanza getStanzaCorrente() {
-		return this.stanzaCorrente;
-	}
+	
 	
 
 

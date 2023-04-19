@@ -21,18 +21,18 @@ public class LabirintoTest {
 
 	@Test
 	public void testGetStanzaVincente() {
-		assertEquals("Biblioteca", l.getStanzaVincente().getNome());
+		assertEquals("Biblioteca", l.getStanzaFinale().getNome());
 	}
 
 
 	@Test
 	public void testSetStanzaCorrente() {
-		l.setStanzaCorrente(DS1);
-		assertEquals(DS1, l.getStanzaCorrente());
+		l.setStanzaIniziale(DS1);
+		assertEquals(DS1, l.getStanzaIniziale());
 	}
 	@Test
 	public void testGetStanzaCorrente() {
-		assertEquals("Atrio", l.getStanzaCorrente().getNome());
+		assertEquals("Atrio", l.getStanzaIniziale().getNome());
 	}
 
 
